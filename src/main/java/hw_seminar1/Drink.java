@@ -20,9 +20,6 @@ public class Drink {
         return price;
     }
 
-    public double getVolumeInLiters() {
-        return volumeInLiters;
-    }
 
     @Override
     public String toString() {
