@@ -10,7 +10,7 @@ public class HotDrink extends Drink{
 
     @Override
     public String toString() {
-        return String.format("%s, Температура: %d", super.toString(), temperatureInCelsius);
+        return String.format("%s, Температура: %d °C", super.toString(), temperatureInCelsius);
     }
 
 }
