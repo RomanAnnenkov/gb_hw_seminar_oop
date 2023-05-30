@@ -1,9 +1,10 @@
 package hw_seminar2.animal;
 
+import hw_seminar2.Soundable;
 import hw_seminar2.SwimSpeed;
 import hw_seminar2.animal.base.Reptile;
 
-public class Snake extends Reptile implements SwimSpeed {
+public class Snake extends Reptile implements SwimSpeed, Soundable {
     public Snake(String name) {
         super(name);
     }
