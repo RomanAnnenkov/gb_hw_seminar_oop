@@ -54,7 +54,7 @@ public class Terrarium {
     }
 
     public String getSounds() {
-        StringBuilder builder = new StringBuilder("Sounds in terrariun:\n");
+        StringBuilder builder = new StringBuilder("Sounds in terrarium:\n");
         for (Soundable animal: getSoundable()) {
             builder.append(animal.makeSound()).append('\n');
         }
