@@ -1,8 +1,9 @@
 package hw_seminar2.animal;
 
+import hw_seminar2.SwimSpeed;
 import hw_seminar2.animal.base.Reptile;
 
-public class Snake extends Reptile {
+public class Snake extends Reptile implements SwimSpeed {
     public Snake(String name) {
         super(name);
     }
@@ -19,6 +20,11 @@ public class Snake extends Reptile {
 
     @Override
     public String toString() {
-        return String.format("Snake: %s, Feed: %s", super.toString(), feed());
+        return String.format("Snake: %s, Feed: %s, SwimSpeed: %d", super.toString(), feed(), getSwimSpeed());
+    }
+
+    @Override
+    public int getSwimSpeed() {
+        return 2;
     }
 }
