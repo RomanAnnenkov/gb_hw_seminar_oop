@@ -26,6 +26,54 @@ public class LinkedUnit<E> implements Iterable<E> {
         size = 0;
     }
 
+    private Unit<E> getUnit(int index) {
+        int lastIndex = size - 1;
+        if (index == 0) {
+            return first;
+        }
+        if (index == lastIndex) {
+            return last;
+        }
+        boolean backwardSearch = index > size / 2;
+        Unit<E> unit = backwardSearch ? last : first;
+        int countStep = backwardSearch ? lastIndex - index : index;
+        for (int i = 0; i < countStep; i++) {
+            unit = backwardSearch ? unit.previous : unit.next;
+        }
+        return unit;
+    }
+
+    public E get(int index) {
+        isIndexExist(index);
+        Unit<E> unit = getUnit(index);
+        return unit.element;
+    }
+
+    public E remove(int index) {
+        isIndexExist(index);
+        Unit<E> unit = getUnit(index);
+        if (unit == first){
+            first = unit.next;
+            first.previous = null;
+        } else if (unit == last) {
+            last = unit.previous;
+            last.next = null;
+        } else {
+            Unit<E> previousUnit = unit.previous;
+            Unit<E> nextUnit = unit.next;
+            previousUnit.next = nextUnit;
+            nextUnit.previous = previousUnit;
+        }
+        size--;
+        return unit.element;
+    }
+
+    public void isIndexExist(int index) throws IndexOutOfBoundsException {
+        if (index >= size) {
+            throw new IndexOutOfBoundsException();
+        }
+    }
+
     public int size() {
         return size;
     }
