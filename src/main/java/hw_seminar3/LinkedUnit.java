@@ -20,6 +20,12 @@ public class LinkedUnit<E> implements Iterable<E> {
         size++;
     }
 
+    public void clear() {
+        first = null;
+        last = null;
+        size = 0;
+    }
+
     public int size() {
         return size;
     }
@@ -27,21 +33,18 @@ public class LinkedUnit<E> implements Iterable<E> {
     @Override
     public Iterator<E> iterator() {
         return new Iterator<>() {
-            int index = 0;
+            Unit<E> current = first;
 
             @Override
             public boolean hasNext() {
-                return index < size;
+                return current != null;
             }
 
             @Override
             public E next() {
-                Unit<E> tmp = first;
-                for (int i = 0; i < index; i++) {
-                    tmp = tmp.next;
-                }
-                index++;
-                return tmp.element;
+                E element = current.element;
+                current = current.next;
+                return element;
             }
         };
     }
