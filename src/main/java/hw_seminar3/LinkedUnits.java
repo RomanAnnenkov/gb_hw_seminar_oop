@@ -3,7 +3,7 @@ package hw_seminar3;
 
 import java.util.Iterator;
 
-public class LinkedUnit<E> implements Iterable<E> {
+public class LinkedUnits<E> implements Iterable<E> {
     private int size = 0;
     private Unit<E> first;
     private Unit<E> last;
