@@ -52,7 +52,7 @@ public class LinkedUnit<E> implements Iterable<E> {
     public E remove(int index) {
         isIndexExist(index);
         Unit<E> unit = getUnit(index);
-        if (unit == first){
+        if (unit == first) {
             first = unit.next;
             first.previous = null;
         } else if (unit == last) {
@@ -72,6 +72,12 @@ public class LinkedUnit<E> implements Iterable<E> {
         if (index >= size) {
             throw new IndexOutOfBoundsException();
         }
+    }
+
+    public void set(E value, int index) {
+        isIndexExist(index);
+        Unit<E> unit = getUnit(index);
+        unit.element = value;
     }
 
     public int size() {

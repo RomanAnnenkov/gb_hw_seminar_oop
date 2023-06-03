@@ -22,7 +22,10 @@ public class MainClassForSeminarThreeHW {
         System.out.println("---remove-index-3---");
         System.out.println(linkedUnit.remove(3));
 
-        System.out.println("---get-element-by-index---");
+        System.out.println("---set-element-index-1--");
+        linkedUnit.set("new value", 1);
+
+        System.out.println("---get-elements-by-index---");
         for (int i = 0; i < linkedUnit.size(); i++) {
             System.out.println(linkedUnit.get(i));
         }
