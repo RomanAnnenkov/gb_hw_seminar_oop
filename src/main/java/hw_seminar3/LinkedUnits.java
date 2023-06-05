@@ -69,7 +69,7 @@ public class LinkedUnits<E> implements Iterable<E> {
     }
 
     public void isIndexExist(int index) throws IndexOutOfBoundsException {
-        if (index >= size) {
+        if (index < 0 || index >= size) {
             throw new IndexOutOfBoundsException();
         }
     }
