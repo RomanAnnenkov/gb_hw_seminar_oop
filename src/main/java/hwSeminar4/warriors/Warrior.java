@@ -5,7 +5,7 @@ import hwSeminar4.weapons.Weapon;
 
 import java.util.Random;
 
-public abstract class Warrior<W extends Weapon,A extends Armor> {
+public abstract class Warrior<W extends Weapon, A extends Armor> {
     private final String name;
     private int healthPoint;
     private W weapon;
@@ -29,6 +29,7 @@ public abstract class Warrior<W extends Weapon,A extends Armor> {
     public W getWeapon() {
         return weapon;
     }
+
     public A getArmor() {
         return armor;
     }
@@ -64,6 +65,6 @@ public abstract class Warrior<W extends Weapon,A extends Armor> {
 
     @Override
     public String toString() {
-        return String.format("Name: %s, Weapon: %s, HealthPoint: %d", name, weapon, healthPoint);
+        return String.format("Name: %s, Weapon: %s, Armor: %s, HealthPoint: %d", name, weapon, armor, healthPoint);
     }
 }

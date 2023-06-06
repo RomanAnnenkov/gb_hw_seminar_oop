@@ -5,4 +5,8 @@ public class Leather implements Armor {
     public int getDefence() {
         return 2;
     }
+    @Override
+    public String toString() {
+        return String.format("Leather: %d ", getDefence());
+    }
 }

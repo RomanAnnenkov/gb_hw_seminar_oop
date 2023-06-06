@@ -1,36 +1,37 @@
 package hwSeminar4;
 
+import hwSeminar4.armors.Armor;
 import hwSeminar4.warriors.Warrior;
+import hwSeminar4.weapons.Weapon;
 
 public class Battle {
-    private Warrior w1;
-    private Warrior w2;
+    private final Warrior w1;
+    private final Warrior w2;
 
     public Battle(Warrior w1, Warrior w2) {
         this.w1 = w1;
         this.w2 = w2;
     }
 
-    public void fight(){
-        while (w1.getHealthPoint() > 0 && w2.getHealthPoint() > 0){
+    public void fight() {
+        while (w1.getHealthPoint() > 0 && w2.getHealthPoint() > 0) {
+            String name1 = w1.getName();
+            String name2 = w2.getName();
             int damage1 = w1.hit();
-            System.out.printf("%s hit %s : %d ---> ", w1.getName(), w2.getName(), damage1);
+            System.out.printf("%s hit %s : %d ---> ", name1, name2, damage1);
             w2.reduceHealth(damage1);
-            System.out.printf("%s health - %d\n", w2.getName(), w2.getHealthPoint());
+            System.out.printf("%s health - %d\n", name2, w2.getHealthPoint());
             int damage2 = w2.hit();
-            if (isDead(w2)){
+            if (isDead(w2)) {
                 continue;
             }
-            System.out.printf("%s hit %s : %d ---> ", w2.getName(), w1.getName(), damage2);
+            System.out.printf("%s hit %s : %d ---> ", name2, name1, damage2);
             w1.reduceHealth(damage2);
-            System.out.printf("%s health - %d\n", w1.getName(), w1.getHealthPoint());
+            System.out.printf("%s health - %d\n", name1, w1.getHealthPoint());
         }
     }
 
-    private boolean isDead(Warrior w) {
-        if (w.getHealthPoint() > 0) {
-            return false;
-        }
-        return true;
+    private boolean isDead(Warrior<Weapon, Armor> w) {
+        return w.getHealthPoint() <= 0;
     }
 }

@@ -8,7 +8,7 @@ import java.util.Iterator;
 import java.util.List;
 
 public class Team<T extends Warrior> implements Iterable<T> {
-    private List<T> team = new ArrayList<>();
+    private final List<T> team = new ArrayList<>();
 
     public void add(T element) {
         team.add(element);
@@ -51,7 +51,7 @@ public class Team<T extends Warrior> implements Iterable<T> {
 
     public int getTeamDefence() {
         int teamDefence = 0;
-        for (T t:this){
+        for (T t : this) {
             teamDefence += t.getArmor().getDefence();
         }
         return teamDefence;

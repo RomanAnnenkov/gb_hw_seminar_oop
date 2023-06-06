@@ -5,4 +5,8 @@ public class Plate implements Armor {
     public int getDefence() {
         return 5;
     }
+    @Override
+    public String toString() {
+        return String.format("Plate: %d ", getDefence());
+    }
 }
