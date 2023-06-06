@@ -14,13 +14,23 @@ public class Battle {
     public void fight(){
         while (w1.getHealthPoint() > 0 && w2.getHealthPoint() > 0){
             int damage1 = w1.hit();
-            System.out.println("first hit second : " + damage1);
+            System.out.printf("%s hit %s : %d ---> ", w1.getName(), w2.getName(), damage1);
             w2.reduceHealth(damage1);
+            System.out.printf("%s health - %d\n", w2.getName(), w2.getHealthPoint());
             int damage2 = w2.hit();
-            System.out.println("second hit first : " + damage2);
+            if (isDead(w2)){
+                continue;
+            }
+            System.out.printf("%s hit %s : %d ---> ", w2.getName(), w1.getName(), damage2);
             w1.reduceHealth(damage2);
-            System.out.println(w1);
-            System.out.println(w2);
+            System.out.printf("%s health - %d\n", w1.getName(), w1.getHealthPoint());
         }
+    }
+
+    private boolean isDead(Warrior w) {
+        if (w.getHealthPoint() > 0) {
+            return false;
+        }
+        return true;
     }
 }
