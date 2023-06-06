@@ -49,6 +49,14 @@ public class Team<T extends Warrior> implements Iterable<T> {
         return teamAttack;
     }
 
+    public int getTeamDefence() {
+        int teamDefence = 0;
+        for (T t:this){
+            teamDefence += t.getArmor().getDefence();
+        }
+        return teamDefence;
+    }
+
     @Override
     public String toString() {
         StringBuilder builder = new StringBuilder();
@@ -56,6 +64,7 @@ public class Team<T extends Warrior> implements Iterable<T> {
             builder.append(t).append('\n');
         }
         builder.append(String.format("TeamAttack: %d ", getTeamAttack()));
+        builder.append(String.format("TeamDefence: %d ", getTeamDefence()));
         builder.append(String.format("TeamHealth: %d ", getTeamHealth()));
         builder.append(String.format("TeamRange: %d ", maxAttackDistance()));
         return builder.toString();
