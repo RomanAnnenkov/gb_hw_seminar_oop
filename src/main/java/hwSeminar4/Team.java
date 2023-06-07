@@ -49,12 +49,15 @@ public class Team<T extends Warrior> implements Iterable<T> {
         return teamAttack;
     }
 
-    public int getTeamDefence() {
-        int teamDefence = 0;
+    public int getMinTeamDefence() {
+        int minTeamDefence = Integer.MAX_VALUE;
         for (T t : this) {
-            teamDefence += t.getArmor().getDefence();
+            int currentDefence = t.getArmor().getDefence();
+            if (currentDefence < minTeamDefence) {
+                minTeamDefence = currentDefence;
+            }
         }
-        return teamDefence;
+        return minTeamDefence;
     }
 
     @Override
@@ -64,7 +67,7 @@ public class Team<T extends Warrior> implements Iterable<T> {
             builder.append(t).append('\n');
         }
         builder.append(String.format("TeamAttack: %d ", getTeamAttack()));
-        builder.append(String.format("TeamDefence: %d ", getTeamDefence()));
+        builder.append(String.format("MinTeamDefence: %d ", getMinTeamDefence()));
         builder.append(String.format("TeamHealth: %d ", getTeamHealth()));
         builder.append(String.format("TeamRange: %d ", maxAttackDistance()));
         return builder.toString();
