@@ -7,6 +7,6 @@ public class Plate implements Armor {
     }
     @Override
     public String toString() {
-        return String.format("Plate: %d ", getDefence());
+        return String.format("Plate: %d", getDefence());
     }
 }

@@ -13,6 +13,6 @@ public class Bow implements Ranged{
 
     @Override
     public String toString() {
-        return String.format("Bow: %d ", damage());
+        return String.format("Bow: %d", damage());
     }
 }

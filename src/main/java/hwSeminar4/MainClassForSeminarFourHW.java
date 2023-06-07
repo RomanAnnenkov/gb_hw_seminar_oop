@@ -29,8 +29,8 @@ public class MainClassForSeminarFourHW {
         System.out.println("-----------");
         System.out.println(teamInfantryman);
 
-        Infantryman melee = new Infantryman("John", 150,new Axe(), new Plate());
-        Archer range = new Archer("Robin", 100, new Bow(), new Leather());
+        Infantryman melee = new Infantryman("John", 50,new Axe(), new Plate());
+        Archer range = new Archer("Robin", 30, new Bow(), new Leather());
         Battle battle1 = new Battle(melee, range);
 
         System.out.println("---fight---");

@@ -8,6 +8,6 @@ public class Sword implements Melee{
 
     @Override
     public String toString() {
-        return String.format("Sword: %d ", damage());
+        return String.format("Sword: %d", damage());
     }
 }

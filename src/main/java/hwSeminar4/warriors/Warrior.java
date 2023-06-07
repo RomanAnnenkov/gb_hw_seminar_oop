@@ -76,6 +76,14 @@ public abstract class Warrior<W extends Weapon, A extends Armor> {
 
     @Override
     public String toString() {
-        return String.format("Name: %s, Weapon: %s, Armor: %s, HealthPoint: %d", name, weapon, armor, healthPoint);
+        StringBuilder builder = new StringBuilder();
+        builder.append("Name: ").append(name).append(",");
+        builder.append(" Weapon: ").append(weapon).append(",");
+        if (armor != null){
+            builder.append(" Armor: ").append(armor).append(",");
+        }
+        builder.append(" HealthPoint: ").append(healthPoint);
+        return builder.toString();
+//        return String.format("Name: %s, Weapon: %s, Armor: %s, HealthPoint: %d", name, weapon, armor, healthPoint);
     }
 }

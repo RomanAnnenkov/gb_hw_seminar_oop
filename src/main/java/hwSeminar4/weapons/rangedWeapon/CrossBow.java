@@ -13,7 +13,7 @@ public class CrossBow implements Ranged{
 
     @Override
     public String toString() {
-        return String.format("CrossBow: %d ", damage());
+        return String.format("CrossBow: %d", damage());
     }
 
 }
