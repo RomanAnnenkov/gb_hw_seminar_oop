@@ -1,8 +1,6 @@
 package hwSeminar4;
 
-import hwSeminar4.armors.Armor;
 import hwSeminar4.warriors.Warrior;
-import hwSeminar4.weapons.Weapon;
 
 public class Battle {
     private final Warrior w1;
@@ -31,7 +29,7 @@ public class Battle {
         }
     }
 
-    private boolean isDead(Warrior<Weapon, Armor> w) {
+    private boolean isDead(Warrior w) {
         return w.getHealthPoint() <= 0;
     }
 }
