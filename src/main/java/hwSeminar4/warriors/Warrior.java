@@ -11,6 +11,13 @@ public abstract class Warrior<W extends Weapon, A extends Armor> {
     private W weapon;
     private A armor;
 
+    public Warrior(String name, int healthPoint, W weapon) {
+        this.name = name;
+        this.healthPoint = healthPoint;
+        this.weapon = weapon;
+        this.armor = null;
+    }
+
     public Warrior(String name, int healthPoint, W weapon, A armor) {
         this.name = name;
         this.healthPoint = healthPoint;
@@ -53,7 +60,11 @@ public abstract class Warrior<W extends Weapon, A extends Armor> {
     }
 
     public void reduceHealth(int damage) {
-        damage -= armor.getDefence();
+        int defence = 0;
+        if (armor != null) {
+            defence = armor.getDefence();
+        }
+        damage -= defence;
         if (damage < 0) {
             damage = 0;
         }

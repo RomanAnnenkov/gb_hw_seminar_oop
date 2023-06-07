@@ -52,7 +52,10 @@ public class Team<T extends Warrior> implements Iterable<T> {
     public int getMinTeamDefence() {
         int minTeamDefence = Integer.MAX_VALUE;
         for (T t : this) {
-            int currentDefence = t.getArmor().getDefence();
+            int currentDefence = 0;
+            if (t.getArmor() != null) {
+                currentDefence = t.getArmor().getDefence();
+            }
             if (currentDefence < minTeamDefence) {
                 minTeamDefence = currentDefence;
             }

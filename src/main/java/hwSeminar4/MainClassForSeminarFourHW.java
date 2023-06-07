@@ -18,7 +18,7 @@ public class MainClassForSeminarFourHW {
 
         Team<Archer> teamArchers = new Team<>();
         teamArchers.add(new Archer("Jimmy", 100, new CrossBow(), new Leather()));
-        teamArchers.add(new Archer("Piter", 100, new Bow(), new Leather()));
+        teamArchers.add(new Archer("Piter", 100, new Bow()));
 
         Team<Infantryman> teamInfantryman = new Team<>();
         teamInfantryman.add(new Infantryman("James", 150, new Sword(), new Plate()));
