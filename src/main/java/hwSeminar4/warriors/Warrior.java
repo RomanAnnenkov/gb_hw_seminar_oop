@@ -84,6 +84,5 @@ public abstract class Warrior<W extends Weapon, A extends Armor> {
         }
         builder.append(" HealthPoint: ").append(healthPoint);
         return builder.toString();
-//        return String.format("Name: %s, Weapon: %s, Armor: %s, HealthPoint: %d", name, weapon, armor, healthPoint);
     }
 }
